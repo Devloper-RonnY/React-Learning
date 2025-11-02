@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "Roshan",
+      "age": "23",
+      "email": "roshan@google.com",
+      "id": "b267"
+    },
+    {
+      "name": "Bhavesh",
+      "age": "23",
+      "email": "bhavesh@google.com",
+      "id": "38bd"
+    },
+    {
+      "name": "sujal",
+      "age": "23",
+      "email": "sujal@google.com",
+      "id": "8ffe"
+    },
+    {
+      "name": "Atharv",
+      "age": "23",
+      "email": "atharv@google.com",
+      "id": "6836"
+    }
+  ]
+}
