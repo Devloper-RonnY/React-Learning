@@ -1,42 +1,30 @@
-import { Navigate, Outlet, Route, Routes } from 'react-router'
-import Home from './Home'
-import About from './About'
-import NavBar from './NavBar'
-import Login from './Login'
-import PageNotFound from './PageNotFound'
-import College from './College'
-import Students from './Students'
-import Department from './Department'
-import CollegeDetails from './CollegeDetails'
-import Users from './Users'
-import UserDetails from './UserDetails'
+import UserAdd from "./UserAdd"
+import UserEdit from "./UserEdit"
+import UserList from "./UserList"
+import {Route, Routes, NavLink} from "react-router"
 
 const App = () => {
+
   return (
-    <>
-    
-      <Routes>
+    <div>
 
-        <Route element={<NavBar />}>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/users/lists?' element={<Users />} />
-        <Route path='/users/:id/:name?' element={<UserDetails />} />
-        </Route>
+      <ul className="flex justify-around ">
+        <li>
+          <NavLink to="/">List</NavLink>
+        </li>
+        <li>
+          <NavLink to="/add">Add User</NavLink>
+        </li>
+      </ul>
 
+       {/* <h1>Make Routes and Pages for Add user and user List UI</h1> */}
+       <Routes>
+        <Route path="/" element={<UserList />}/>
+        <Route path="add" element={<UserAdd />}/>
+        <Route path="/edit/:id" element={<UserEdit />}/>
+       </Routes>
 
-        <Route path='/college' element={<College />}>
-        <Route index element={<Students />} />
-        <Route path='departments' element={<Department />} />
-        <Route path='collegedetails' element={<CollegeDetails />} />
-        </Route>
-
-        <Route path='/*' element={<PageNotFound />}></Route>
-        
-         {/* <Route path='/*' element={<Navigate to="/login" />}></Route> */}
-      </Routes>
-    </>
+    </div>
   )
 }
 
